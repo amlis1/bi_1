@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard interactivo de la Liga Pro 2026: posiciones, goles, resultados y posesión.">
+  <title>Liga Pro 2026 | BI Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark dashboard-nav sticky-top" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="BI Lab, inicio"><span class="brand-mark">B<span>I</span></span><span>BI<span class="brand-light"> LAB</span></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardNav" aria-controls="dashboardNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="dashboardNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3"><li class="nav-item"><a class="nav-link" href="index.html">Fundamentos</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="btn btn-nav" href="index.html#quiz">Probar el quiz <span aria-hidden="true">↗</span></a></li></ul></div>
+    </div>
+  </nav>
+
+  <main class="dashboard-main">
+    <section class="dashboard-hero">
+      <div class="container">
+        <div class="dashboard-overline"><span class="live-dot"></span> CENTRO DE ANÁLISIS <span class="overline-separator">/</span> LIGA PRO 2026</div>
+        <div class="dashboard-title-row">
+          <div><h1>El campeonato,<br><span>en perspectiva.</span></h1><p>Rendimiento, goles y tendencias del torneo en un solo lugar.</p></div>
+          <div class="season-chip"><span class="season-icon" aria-hidden="true">◉</span><span>TEMPORADA<br><b>2026 · SIMULACIÓN</b></span></div>
+        </div>
+        <div class="filter-bar">
+          <label for="round-filter">JORNADA</label>
+          <select class="form-select" id="round-filter" aria-label="Filtrar datos por jornada">
+            <option value="all">Todo el torneo</option>
+            <option value="1">Jornada 1</option><option value="2">Jornada 2</option><option value="3">Jornada 3</option><option value="4">Jornada 4</option><option value="5">Jornada 5</option><option value="6">Jornada 6</option><option value="7">Jornada 7</option><option value="8">Jornada 8</option><option value="9">Jornada 9</option><option value="10">Jornada 10</option>
+          </select>
+          <span class="filter-divider" aria-hidden="true"></span>
+          <span class="filter-caption">Los indicadores y gráficos responden al filtro seleccionado.</span>
+          <span class="data-status"><span aria-hidden="true">●</span> DATOS ACTUALIZADOS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-content container" aria-label="Indicadores del campeonato">
+      <div class="kpi-grid">
+        <article class="kpi-card kpi-primary"><div class="kpi-head"><span>GOLES EN EL TORNEO</span><span class="kpi-icon" aria-hidden="true">⚽</span></div><strong id="kpi-goals">—</strong><small id="kpi-goals-note">A través de todos los partidos</small><div class="kpi-accent"></div></article>
+        <article class="kpi-card"><div class="kpi-head"><span>EQUIPO LÍDER</span><span class="kpi-icon" aria-hidden="true">♛</span></div><strong class="kpi-team" id="kpi-leader">—</strong><small id="kpi-leader-note">Líder en puntos</small><div class="kpi-bottom-tag"><i></i> TABLA GENERAL</div></article>
+        <article class="kpi-card"><div class="kpi-head"><span>PROMEDIO DE GOLES</span><span class="kpi-icon" aria-hidden="true">↗</span></div><strong id="kpi-average">—</strong><small>por partido disputado</small><div class="kpi-mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="kpi-card"><div class="kpi-head"><span>GOLEADOR DEL TORNEO</span><span class="kpi-icon" aria-hidden="true">✳</span></div><strong class="kpi-team" id="kpi-scorer">—</strong><small id="kpi-scorer-note">— goles</small><div class="kpi-bottom-tag"><i></i> MÁXIMO ANOTADOR</div></article>
+        <article class="kpi-card"><div class="kpi-head"><span>PARTIDOS JUGADOS</span><span class="kpi-icon" aria-hidden="true">▦</span></div><strong id="kpi-matches">—</strong><small id="kpi-matches-note">— jornadas completadas</small><div class="kpi-bottom-tag"><i></i> 10 EQUIPOS</div></article>
+      </div>
+
+      <div class="charts-grid">
+        <article class="panel chart-panel goals-panel"><div class="panel-heading"><div><span class="panel-kicker">ATAQUE · COMPARATIVA</span><h2>Goles por equipo</h2></div><span class="chart-unit">GOLES <span>●</span></span></div><div class="chart-wrap"><canvas id="goals-chart" role="img" aria-label="Gráfica de barras con goles anotados por equipo"></canvas></div><p class="chart-caption">Los ocho equipos con mayor número de goles anotados.</p></article>
+        <article class="panel chart-panel results-panel"><div class="panel-heading"><div><span class="panel-kicker">RESULTADOS · DISTRIBUCIÓN</span><h2>Cómo termina el partido</h2></div></div><div class="donut-wrap"><canvas id="results-chart" role="img" aria-label="Gráfica de dona con la distribución de resultados"></canvas><div class="donut-center"><strong id="result-total">0</strong><span>PARTIDOS</span></div></div><div class="chart-legend" id="results-legend" aria-label="Leyenda de resultados"></div></article>
+        <article class="panel chart-panel points-panel"><div class="panel-heading"><div><span class="panel-kicker">CAMPAÑA · EVOLUCIÓN</span><h2>Carrera por la cima</h2></div><span class="chart-unit">PUNTOS <span>●</span></span></div><div class="chart-wrap line-wrap"><canvas id="points-chart" role="img" aria-label="Gráfica de línea con la evolución de puntos de los tres equipos líderes"></canvas></div><p class="chart-caption">Puntos acumulados jornada a jornada para los tres primeros.</p></article>
+        <article class="panel chart-panel possession-panel"><div class="panel-heading"><div><span class="panel-kicker">CONTROL · POSESIÓN</span><h2>El balón, en sus pies</h2></div><span class="chart-unit">PROMEDIO <span>●</span></span></div><div class="chart-wrap horizontal-wrap"><canvas id="possession-chart" role="img" aria-label="Gráfica horizontal de posesión promedio por equipo"></canvas></div><p class="chart-caption">Posesión promedio estimada según los partidos seleccionados.</p></article>
+      </div>
+
+      <section class="panel table-panel" aria-labelledby="table-title">
+        <div class="panel-heading table-heading"><div><span class="panel-kicker">CLASIFICACIÓN · TEMPORADA 2026</span><h2 id="table-title">Tabla de posiciones</h2></div><span class="table-hint"><span aria-hidden="true">↕</span> Selecciona una columna para ordenar</span></div>
+        <div class="table-responsive"><table class="table standings-table mb-0"><caption class="visually-hidden">Clasificación de equipos de Liga Pro 2026. Seleccione los encabezados para ordenar.</caption><thead><tr><th scope="col" class="rank-head">#</th><th scope="col" class="team-head">EQUIPO</th><th scope="col"><button class="sort-button" data-sort="played" aria-label="Ordenar por partidos jugados">PJ</button></th><th scope="col"><button class="sort-button" data-sort="wins" aria-label="Ordenar por partidos ganados">PG</button></th><th scope="col"><button class="sort-button" data-sort="draws" aria-label="Ordenar por partidos empatados">PE</button></th><th scope="col"><button class="sort-button" data-sort="losses" aria-label="Ordenar por partidos perdidos">PP</button></th><th scope="col"><button class="sort-button" data-sort="goalsFor" aria-label="Ordenar por goles a favor">GF</button></th><th scope="col"><button class="sort-button" data-sort="goalsAgainst" aria-label="Ordenar por goles en contra">GC</button></th><th scope="col"><button class="sort-button" data-sort="goalDifference" aria-label="Ordenar por diferencia de goles">DG</button></th><th scope="col"><button class="sort-button active" data-sort="points" aria-label="Ordenar por puntos" aria-sort="descending">PTS <span aria-hidden="true">↓</span></button></th></tr></thead><tbody id="standings-body"></tbody></table></div>
+        <div class="table-footer"><span><i class="qualification-dot"></i> Zona de clasificación</span><span>Fuente: datos simulados con fines educativos · Liga Pro 2026</span></div>
+      </section>
+      <p class="dashboard-footnote">BI LAB <span>·</span> Los datos de este dashboard son simulados y se utilizan únicamente con fines de aprendizaje y demostración.</p>
+    </section>
+  </main>
+  <footer class="dashboard-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 BI LAB · DATOS QUE AYUDAN A DECIDIR</span><a href="index.html">Volver a fundamentos de BI <span aria-hidden="true">↗</span></a></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprende los fundamentos de Business Intelligence y pon a prueba tus conocimientos con un quiz interactivo.">
+  <title>BI Lab | Aprende Business Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="BI Lab, inicio">
+        <span class="brand-mark" aria-hidden="true">B<span>I</span></span><span>BI<span class="brand-light"> LAB</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Fundamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#etl">Proceso ETL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#quiz">Quiz BI</a></li>
+          <li class="nav-item"><a class="btn btn-nav" href="dashboard.html">Explorar dashboard <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> INTELIGENCIA DE NEGOCIOS · GUÍA INTERACTIVA</span>
+          <h1>Los datos no hablan.<br><span>BI les da una voz.</span></h1>
+          <p class="hero-lead">Convierte datos dispersos en decisiones que mueven negocios. Aprende cómo funciona Business Intelligence y comprueba cuánto sabes.</p>
+          <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+            <a class="btn btn-lime btn-lg" href="#fundamentos">Empezar a aprender <span aria-hidden="true">↓</span></a>
+            <span class="hero-note"><span aria-hidden="true">◷</span> 8 min de lectura · 10 preguntas</span>
+          </div>
+          <div class="hero-stats">
+            <div><strong>01</strong><span>Entiende el dato</span></div>
+            <div><strong>02</strong><span>Transforma información</span></div>
+            <div><strong>03</strong><span>Decide con confianza</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustración abstracta de datos convirtiéndose en conocimiento">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+          <div class="visual-core"><span class="core-spark" aria-hidden="true">✳</span><strong>BI</strong><small>INTELLIGENCE</small></div>
+          <div class="floating-card float-top"><span class="mini-icon">↗</span><span><b>+24.8%</b><small>crecimiento</small></span></div>
+          <div class="floating-card float-bottom"><span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><b>Decisión</b><small>basada en datos</small></span></div>
+          <div class="visual-caption">DEL DATO A LA ACCIÓN <span>●</span></div>
+        </div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </header>
+
+    <section class="section-pad" id="fundamentos">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow eyebrow-dark">01 — LOS FUNDAMENTOS</span><h2>¿Qué es <span>Business Intelligence?</span></h2></div>
+          <p>Una práctica estratégica para entender qué está pasando, por qué y qué hacer a continuación.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4"><article class="concept-card h-100"><div class="card-number">01</div><div class="concept-icon icon-green" aria-hidden="true">◉</div><h3>Una definición útil</h3><p>Business Intelligence (BI) reúne procesos, tecnologías y prácticas que transforman datos de una organización en información clara para tomar mejores decisiones.</p><span class="card-foot">DATOS → INSIGHTS → ACCIÓN</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="concept-card h-100"><div class="card-number">02</div><div class="concept-icon icon-gold" aria-hidden="true">⌁</div><h3>¿Por qué importa?</h3><p>BI permite medir resultados, detectar oportunidades y riesgos, alinear equipos y reaccionar con evidencia en lugar de depender solo de intuiciones.</p><span class="card-foot">CLARIDAD PARA AVANZAR</span></article></div>
+          <div class="col-md-6 col-lg-4"><article class="concept-card h-100"><div class="card-number">03</div><div class="concept-icon icon-blue" aria-hidden="true">⟳</div><h3>El ciclo del dato</h3><p>Los datos se generan, recopilan, preparan, analizan y comunican. La decisión resultante produce nuevas acciones y datos: el ciclo vuelve a empezar.</p><span class="card-foot">MEDIR · APRENDER · MEJORAR</span></article></div>
+        </div>
+        <div class="data-cycle mt-4" aria-label="Ciclo de vida del dato: generar, recopilar, preparar, analizar, comunicar y actuar">
+          <div class="cycle-step"><span>01</span><b>Generar</b><small>Eventos y transacciones</small></div><i aria-hidden="true">→</i>
+          <div class="cycle-step"><span>02</span><b>Recopilar</b><small>Fuentes y sistemas</small></div><i aria-hidden="true">→</i>
+          <div class="cycle-step"><span>03</span><b>Preparar</b><small>Calidad y contexto</small></div><i aria-hidden="true">→</i>
+          <div class="cycle-step"><span>04</span><b>Analizar</b><small>Patrones y métricas</small></div><i aria-hidden="true">→</i>
+          <div class="cycle-step"><span>05</span><b>Actuar</b><small>Decidir y aprender</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision-section section-pad" id="decisiones">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow eyebrow-dark">02 — DECIDIR MEJOR</span><h2>De la intuición a la <span>evidencia</span></h2></div>
+          <p>La experiencia importa. Los datos la complementan con señales medibles, contexto y capacidad de aprender.</p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <article class="comparison-card h-100">
+              <div class="comparison-row intuition"><div class="comparison-label"><span aria-hidden="true">◌</span><b>Intuitiva</b></div><p>“Siento que este producto se venderá mejor en verano.”</p><small>Experiencia · percepción · puede tener sesgos</small></div>
+              <div class="comparison-divider"><span>VS</span></div>
+              <div class="comparison-row driven"><div class="comparison-label"><span aria-hidden="true">↗</span><b>Data-driven</b></div><p>“Las ventas históricas suben 18% en verano en estas tiendas.”</p><small>Evidencia · contexto · hipótesis comprobable</small></div>
+            </article>
+          </div>
+          <div class="col-lg-7">
+            <article class="dikw-card h-100">
+              <div class="dikw-intro"><div><span class="eyebrow eyebrow-dark">PIRÁMIDE DIKW</span><h3>Sube de nivel.<br>Haz mejores preguntas.</h3></div><p>La jerarquía DIKW explica cómo dar valor a los datos: cada nivel agrega contexto y propósito.</p></div>
+              <div class="dikw-pyramid" aria-label="Pirámide DIKW: datos, información, conocimiento y sabiduría">
+                <div class="pyramid-level level-wisdom"><b>Sabiduría</b><span>¿Qué deberíamos hacer?</span></div>
+                <div class="pyramid-level level-knowledge"><b>Conocimiento</b><span>¿Por qué está ocurriendo?</span></div>
+                <div class="pyramid-level level-information"><b>Información</b><span>¿Qué está ocurriendo?</span></div>
+                <div class="pyramid-level level-data"><b>Datos</b><span>Hechos sin interpretar</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="examples-strip mt-4">
+          <div class="example-title"><span class="eyebrow eyebrow-dark">BI EN ACCIÓN</span><h3>Decisiones del mundo real</h3></div>
+          <article><span class="example-tag">RETAIL</span><p>Una cadena ajusta inventario por tienda al combinar ventas, clima y estacionalidad.</p></article>
+          <article><span class="example-tag">BANCA</span><p>Un banco identifica transacciones atípicas en tiempo casi real y prioriza alertas.</p></article>
+          <article><span class="example-tag">DEPORTE</span><p>El cuerpo técnico compara cargas y rendimiento para planificar rotaciones y tácticas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="etl-section section-pad" id="etl">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">03 — PREPARAR PARA ENTENDER</span><h2>ETL: el motor que <span>ordena los datos</span></h2></div>
+          <p>Antes de visualizar, hay que traer datos desde sus fuentes, darles forma y dejarlos listos para el análisis.</p>
+        </div>
+        <div class="etl-flow" aria-label="Diagrama del proceso ETL: extraer, transformar y cargar">
+          <article class="etl-card"><div class="etl-top"><span class="etl-index">01</span><span class="etl-symbol" aria-hidden="true">⇥</span></div><span class="etl-kicker">EXTRACT · EXTRAER</span><h3>Conecta las fuentes</h3><p>Recupera los datos desde los sistemas de origen: ventas, CRM, hojas de cálculo, APIs o sensores.</p><div class="etl-example"><b>Ejemplo</b><span>Leer pedidos desde la base de datos de una tienda.</span></div></article>
+          <div class="etl-arrow" aria-hidden="true">→</div>
+          <article class="etl-card etl-highlight"><div class="etl-top"><span class="etl-index">02</span><span class="etl-symbol" aria-hidden="true">⤨</span></div><span class="etl-kicker">TRANSFORM · TRANSFORMAR</span><h3>Limpia y enriquece</h3><p>Corrige formatos, elimina duplicados, valida calidad y combina la información necesaria.</p><div class="etl-example"><b>Ejemplo</b><span>Unificar monedas, fechas y códigos de producto.</span></div></article>
+          <div class="etl-arrow" aria-hidden="true">→</div>
+          <article class="etl-card"><div class="etl-top"><span class="etl-index">03</span><span class="etl-symbol" aria-hidden="true">⇣</span></div><span class="etl-kicker">LOAD · CARGAR</span><h3>Deja listo el análisis</h3><p>Guarda los datos transformados en un destino fiable para consultas e informes.</p><div class="etl-example"><b>Ejemplo</b><span>Cargar las ventas limpias en un almacén de datos.</span></div></article>
+        </div>
+        <div class="etl-tools"><span>HERRAMIENTAS DEL ECOSISTEMA</span><div><b>Power BI</b><b>Tableau</b><b>Pentaho</b><b>Apache Airflow</b></div><small>Power BI y Tableau destacan en visualización; Pentaho ofrece integración de datos y Airflow orquesta flujos de trabajo.</small></div>
+      </div>
+    </section>
+
+    <section class="industry-section section-pad">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow eyebrow-dark">04 — MÁS ALLÁ DEL REPORTE</span><h2>BI aplicado a <span>cada industria</span></h2></div>
+          <p>Los indicadores cambian; la idea es la misma: conectar una pregunta concreta con datos fiables.</p>
+        </div>
+        <div class="industry-grid">
+          <article class="industry-card"><span>01 / SALUD</span><h3>Anticipar demanda</h3><p>Proyectar ocupación y disponibilidad de recursos con históricos de atención y tendencias estacionales.</p><b>Resultado · mejor planificación</b></article>
+          <article class="industry-card"><span>02 / LOGÍSTICA</span><h3>Optimizar rutas</h3><p>Analizar tiempos, tráfico y entregas para detectar retrasos recurrentes y rediseñar recorridos.</p><b>Resultado · menos demoras</b></article>
+          <article class="industry-card"><span>03 / EDUCACIÓN</span><h3>Acompañar el progreso</h3><p>Combinar asistencia y avance académico para identificar a tiempo dónde hace falta apoyo.</p><b>Resultado · intervención oportuna</b></article>
+          <article class="industry-card industry-cta"><span>MANOS A LA OBRA</span><h3>¿Listo para explorar los datos?</h3><p>Abre un dashboard deportivo con filtros, indicadores y visualizaciones interactivas.</p><a href="dashboard.html">Ver Liga Pro 2026 <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section section-pad" id="quiz">
+      <div class="container">
+        <div class="quiz-heading">
+          <div><span class="eyebrow">05 — PON A PRUEBA LO APRENDIDO</span><h2>¿Qué tan BI <span>estás?</span></h2><p>Diez preguntas. Una racha que suma. ¿Llegarás a Data Master?</p></div>
+          <div class="quiz-meta"><span class="quiz-meta-icon" aria-hidden="true">✳</span><span>10 RONDAS<br><b>1 RETO</b></span></div>
+        </div>
+        <div class="quiz-shell">
+          <div class="quiz-topline"><span id="quiz-step-label">PREGUNTA 01 <span>/ 10</span></span><span class="streak-label" aria-live="polite">RACHA <b id="streak-count">0</b> <span aria-hidden="true">🔥</span></span></div>
+          <div class="progress quiz-progress" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><div id="quiz-progress-bar" class="progress-bar"></div></div>
+          <div id="quiz-stage" aria-live="polite"></div>
+          <div id="quiz-feedback" class="quiz-feedback" aria-live="polite"></div>
+          <div class="quiz-footer"><span><span aria-hidden="true">✦</span> +100 pts por respuesta correcta · bonus por racha</span><span id="quiz-score">PUNTAJE <b>0</b></span></div>
+        </div>
+        <div class="best-score" id="best-score" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"><a class="footer-brand" href="index.html">BI<span> LAB</span></a><p>Aprender de los datos también es una decisión.</p><a href="dashboard.html">Dashboard Liga Pro 2026 <span aria-hidden="true">↗</span></a></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
