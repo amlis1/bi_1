@@ -3,9 +3,10 @@
   "use strict";
 
   const exportButton = document.querySelector("#export-pdf");
+  const printButton = document.querySelector("#print-report");
   const status = document.querySelector("#export-status");
   const roundFilter = document.querySelector("#round-filter");
-  if (!exportButton || !status || !roundFilter) return;
+  if (!exportButton || !printButton || !status || !roundFilter) return;
 
   function setExportStatus(message, isError = false) {
     status.textContent = message;
@@ -183,6 +184,15 @@
       setExportStatus(error instanceof Error ? error.message : "Ocurrió un error al exportar el informe.", true);
     } finally {
       exportButton.disabled = false;
+    }
+  });
+
+  printButton.addEventListener("click", () => {
+    try {
+      window.print();
+    } catch (error) {
+      console.error("No se pudo abrir el diálogo de impresión.", error);
+      setExportStatus("No se pudo abrir la ventana de impresión. Revisa la configuración del navegador.", true);
     }
   });
 })();
