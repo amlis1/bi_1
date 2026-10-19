@@ -4,16 +4,16 @@ html{scroll-behavior:smooth;scroll-padding-top:82px}
 body{font-family:var(--font-body);color:var(--ink);background:#fff;font-size:15px}
 h1,h2,h3,h4,.navbar-brand{font-family:var(--font-head);letter-spacing:-.045em}
 a{color:inherit}
-.site-nav{background:#14291f;min-height:72px;border-bottom:1px solid rgba(255,255,255,.09)}
-.theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #708275;border-radius:5px;padding:8px 10px;background:transparent;color:#e4ece5;font:500 11px var(--font-body);white-space:nowrap;cursor:pointer}
+.site-nav{background:#14291f;min-height:68px;border-bottom:1px solid rgba(255,255,255,.09)}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #708275;border-radius:4px;padding:7px 9px;background:transparent;color:#e4ece5;font:500 10px var(--font-body);white-space:nowrap;cursor:pointer}
 .theme-toggle:hover{border-color:var(--lime);color:var(--lime)}
 .theme-toggle:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
 .theme-toggle-icon{font-size:15px;line-height:1}
-.navbar-brand{font-weight:800;font-size:16px;letter-spacing:.025em;color:#fff!important}
+.navbar-brand{font-weight:800;font-size:15px;letter-spacing:.025em;color:#fff!important}
 .brand-light,.footer-brand span{color:#a6b5aa;font-weight:500}
 .brand-mark{height:29px;width:29px;background:var(--lime);color:#183321;display:inline-grid;place-items:center;border-radius:8px;font-weight:800;font-size:14px;letter-spacing:-.08em}
 .brand-mark span{color:#6d8d40}
-.navbar-nav .nav-link{color:#b9c7bd;font-size:13px;font-weight:500}
+.navbar-nav .nav-link{color:#b9c7bd;font-size:12px;font-weight:500}
 .navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:#fff}
 .btn-nav{color:var(--green-dark);background:var(--lime);font-size:12px;font-weight:700;border-radius:5px;padding:10px 14px}
 .btn-nav:hover,.btn-lime:hover{background:#d5fa89;color:var(--green-dark)}
