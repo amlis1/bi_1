@@ -16,7 +16,7 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="BI Lab, inicio"><span class="brand-mark">B<span>I</span></span><span>BI<span class="brand-light"> LAB</span></span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardNav" aria-controls="dashboardNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="dashboardNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3"><li class="nav-item"><a class="nav-link" href="index.html">Fundamentos</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a></li><li class="nav-item"><a class="btn btn-nav" href="index.html#quiz">Probar el quiz <span aria-hidden="true">↗</span></a></li></ul></div>
+      <div class="collapse navbar-collapse" id="dashboardNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3"><li class="nav-item"><a class="nav-link" href="index.html">Fundamentos</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="dashboard.html">Dashboard</a></li><li class="nav-item"><button class="theme-toggle" type="button" aria-label="Cambiar a tema oscuro" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Tema oscuro</span></button></li><li class="nav-item"><a class="btn btn-nav" href="index.html#quiz">Probar el quiz <span aria-hidden="true">↗</span></a></li></ul></div>
     </div>
   </nav>
 
@@ -36,8 +36,10 @@
           </select>
           <span class="filter-divider" aria-hidden="true"></span>
           <span class="filter-caption">Los indicadores y gráficos responden al filtro seleccionado.</span>
+          <button class="export-button" id="export-pdf" type="button"><span aria-hidden="true">⇩</span> Exportar informe PDF</button>
           <span class="data-status"><span aria-hidden="true">●</span> DATOS ACTUALIZADOS</span>
         </div>
+        <p id="export-status" class="export-status" role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -68,7 +70,11 @@
   <footer class="dashboard-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© 2026 BI LAB · DATOS QUE AYUDAN A DECIDIR</span><a href="index.html">Volver a fundamentos de BI <span aria-hidden="true">↗</span></a></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/data.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/report.js"></script>
 </body>
 </html>

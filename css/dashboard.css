@@ -3,6 +3,10 @@
 body{font-family:var(--font-body);color:var(--ink);background:#f5f6f2;font-size:13px}
 h1,h2,h3,.navbar-brand{font-family:var(--font-head);letter-spacing:-.045em}
 .dashboard-nav{background:#14291f;min-height:68px;border-bottom:1px solid #ffffff13}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #708275;border-radius:4px;padding:7px 9px;background:transparent;color:#e4ece5;font:500 10px var(--font-body);white-space:nowrap;cursor:pointer}
+.theme-toggle:hover{border-color:var(--lime);color:var(--lime)}
+.theme-toggle:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.theme-toggle-icon{font-size:14px;line-height:1}
 .navbar-brand{font-weight:800;font-size:15px;letter-spacing:.025em;color:#fff!important}.brand-light{color:#a6b5aa;font-weight:500}
 .brand-mark{height:28px;width:28px;background:var(--lime);color:#183321;display:inline-grid;place-items:center;border-radius:7px;font-weight:800;font-size:13px;letter-spacing:-.08em}.brand-mark span{color:#6d8d40}
 .navbar-nav .nav-link{color:#b9c7bd;font-size:12px}.navbar-nav .nav-link:hover,.navbar-nav .nav-link.active{color:white}
@@ -48,6 +52,33 @@ h1,h2,h3,.navbar-brand{font-family:var(--font-head);letter-spacing:-.045em}
 .dashboard-footnote{font-size:8px;color:#98a198;margin:17px 0 0}.dashboard-footnote span{color:#7d9b54}
 .dashboard-footer{background:#13261d;color:#a7b5aa;padding:17px 0;font-size:8px;letter-spacing:.08em}.dashboard-footer a{color:#c6e590;text-decoration:none;letter-spacing:0;font-size:9px}
 .sort-desc .sort-button.active span{display:inline-block;transform:rotate(180deg)}
+.export-button{border:1px solid #91aa69;border-radius:4px;background:#c8f169;color:#1c3323;font:700 9px var(--font-body);padding:8px 11px;white-space:nowrap;cursor:pointer}
+.export-button:hover{background:#d8f795}.export-button:disabled{opacity:.65;cursor:wait}
+.export-button>span{font-size:13px;vertical-align:-1px;margin-right:3px}
+.export-status{font-size:9px;color:#c5df9e;min-height:0;margin:0;text-align:right}
+.export-status:not(:empty){margin-top:5px;margin-bottom:-5px}
+.export-status.is-error{color:#a9473e}
 @media(max-width:991.98px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.charts-grid{grid-template-columns:1fr 1fr}.goals-panel{grid-column:span 2}.points-panel,.possession-panel{min-width:0}}
 @media(max-width:767.98px){.dashboard-title-row{align-items:flex-start}.dashboard-title-row h1{font-size:38px}.season-chip{margin-top:8px}.filter-bar{flex-wrap:wrap;padding:12px 0}.filter-caption{order:4;width:100%}.data-status{margin-left:auto}.filter-divider{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.charts-grid{grid-template-columns:1fr}.goals-panel{grid-column:auto}.chart-panel{padding:17px}.chart-wrap,.goals-panel .chart-wrap{height:205px}.donut-wrap{height:155px}.line-wrap{height:190px}.horizontal-wrap{height:210px}.table-panel{padding:16px 12px 0}.table-hint{max-width:110px;text-align:right;line-height:1.5}.table-footer{flex-direction:column}.standings-table .team-head{min-width:133px}}
 @media(max-width:480px){.dashboard-title-row{display:block}.season-chip{margin-top:18px}.filter-bar .form-select{width:150px}.filter-caption{line-height:1.5}.kpi-card{padding:13px;min-height:116px}.kpi-card>strong{font-size:24px}.kpi-card>strong.kpi-team{font-size:15px}.kpi-head{font-size:6px}.chart-wrap,.goals-panel .chart-wrap{height:190px}.dashboard-footer{letter-spacing:.03em}}
+
+html[data-theme="dark"]{--muted:#adbaae;--line:#354438}
+html[data-theme="dark"] body{background:#101813;color:#e3ebe3}
+html[data-theme="dark"] .dashboard-content{color:#e3ebe3}
+html[data-theme="dark"] .panel,html[data-theme="dark"] .kpi-card:not(.kpi-primary){background:#1b2820;border-color:#304036}
+html[data-theme="dark"] .kpi-head,html[data-theme="dark"] .kpi-card>small,html[data-theme="dark"] .kpi-bottom-tag,html[data-theme="dark"] .chart-unit,html[data-theme="dark"] .chart-caption,html[data-theme="dark"] .legend-item,html[data-theme="dark"] .table-hint{color:#aebbb0}
+html[data-theme="dark"] .panel-kicker{color:#a8c481}
+html[data-theme="dark"] .chart-legend .legend-item{color:#c0cbc1}
+html[data-theme="dark"] .standings-table thead th{color:#b3c0b4;border-color:#39483d}
+html[data-theme="dark"] .standings-table td{color:#bbc7bc;border-color:#303e33}
+html[data-theme="dark"] .standings-table tbody tr:hover{background:#243328}
+html[data-theme="dark"] .standings-table tbody tr.leader-row{background:#273a28}
+html[data-theme="dark"] .team-cell{color:#e1e9df!important}
+html[data-theme="dark"] .team-logo{background:#344638!important;color:#e3ebe3!important}
+html[data-theme="dark"] .sort-button:hover,html[data-theme="dark"] .sort-button.active{color:#c5e796}
+html[data-theme="dark"] .points-cell{color:#c4e392!important}
+html[data-theme="dark"] .table-footer{border-color:#39483d;color:#aebbb0}
+html[data-theme="dark"] .dashboard-footnote{color:#a5b2a6}
+html[data-theme="dark"] .donut-center{color:#e3ebe3}
+html[data-theme="dark"] .export-status{color:#c5e796}
+html[data-theme="dark"] .export-status.is-error{color:#f0988c}

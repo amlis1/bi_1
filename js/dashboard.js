@@ -7,14 +7,15 @@
     return;
   }
   Chart.defaults.font.family = '"DM Sans", sans-serif';
-  Chart.defaults.color = "#78857b";
+  const isDarkTheme = () => document.documentElement.dataset.theme === "dark";
+  Chart.defaults.color = isDarkTheme() ? "#c1ccc2" : "#78857b";
   Chart.defaults.animation.duration = 650;
 
   const teamById = new Map(data.teams.map((team) => [team.id, team]));
   const filter = document.querySelector("#round-filter");
   const tableBody = document.querySelector("#standings-body");
   if (!filter || !tableBody) return;
-  const colors = { home: "#78a34b", away: "#5d9eb2", draw: "#e1b85f", grid: "#edf0eb" };
+  const colors = { home: "#78a34b", away: "#5d9eb2", draw: "#e1b85f", grid: isDarkTheme() ? "#344237" : "#edf0eb" };
   const charts = {};
   let sortKey = "points";
   let sortDirection = -1;
@@ -169,6 +170,19 @@
     renderStandings(matches);
   }
 
+  function updateChartTheme() {
+    const dark = isDarkTheme();
+    Chart.defaults.color = dark ? "#c1ccc2" : "#78857b";
+    colors.grid = dark ? "#344237" : "#edf0eb";
+    Object.values(charts).forEach((chart) => {
+      Object.values(chart.options.scales || {}).forEach((scale) => {
+        if (scale.ticks) scale.ticks.color = dark ? "#c1ccc2" : "#78857b";
+        if (scale.grid && scale.grid.display !== false) scale.grid.color = colors.grid;
+      });
+      chart.update();
+    });
+  }
+
   filter.addEventListener("change", () => { selectedRound = filter.value; refreshDashboard(); });
   document.querySelectorAll(".sort-button").forEach((button) => button.addEventListener("click", () => {
     const nextKey = button.dataset.sort;
@@ -176,6 +190,7 @@
     else { sortKey = nextKey; sortDirection = nextKey === "team" ? 1 : -1; }
     renderStandings(getFilteredMatches());
   }));
+  window.addEventListener("bi-theme-change", updateChartTheme);
   createCharts();
   refreshDashboard();
 })();
