@@ -1,11 +1,12 @@
 :root{--ink:#1b2921;--muted:#718078;--paper:#f2f4ef;--line:#e4e9e1;--deep:#14291f;--green:#7da04f;--lime:#c8f169;--gold:#ddb65d;--blue:#65a5b9;--font-head:"Manrope",sans-serif;--font-body:"DM Sans",sans-serif}
 *{box-sizing:border-box}
-body{font-family:var(--font-body);color:var(--ink);background:#f5f6f2;font-size:13px}
+body{padding-top:68px;font-family:var(--font-body);color:var(--ink);background:#f5f6f2;font-size:13px}
 h1,h2,h3,.navbar-brand{font-family:var(--font-head);letter-spacing:-.045em}
 .dashboard-nav{background:#14291f;min-height:68px;border-bottom:1px solid #ffffff13}
-.dashboard-nav>.container{flex-wrap:wrap}
-.dashboard-nav .navbar-collapse{display:flex!important;flex-basis:100%}
-.dashboard-nav .navbar-nav{flex-direction:row;flex-wrap:wrap;gap:4px 14px;padding:8px 0}
+.dashboard-nav>.container{flex-wrap:nowrap}
+.dashboard-nav .navbar-collapse{display:flex!important;flex:1 1 0;min-width:0;overflow-x:auto}
+.dashboard-nav .navbar-nav{flex-direction:row;flex-wrap:nowrap;gap:4px 14px;padding:8px 0;width:max-content}
+.dashboard-nav .navbar-brand{flex:none}
 .theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid #708275;border-radius:4px;padding:7px 9px;background:transparent;color:#e4ece5;font:500 10px var(--font-body);white-space:nowrap;cursor:pointer}
 .theme-toggle:hover{border-color:var(--lime);color:var(--lime)}
 .theme-toggle:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
@@ -65,7 +66,6 @@ h1,h2,h3,.navbar-brand{font-family:var(--font-head);letter-spacing:-.045em}
 .print-button:hover{border-color:#739350;background:#f5f8ef}
 .print-button>span{font-size:12px;vertical-align:-1px;margin-right:3px}
 @media(max-width:991.98px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.charts-grid{grid-template-columns:1fr 1fr}.goals-panel{grid-column:span 2}.points-panel,.possession-panel{min-width:0}}
-@media(min-width:992px){.dashboard-nav>.container{flex-wrap:nowrap}.dashboard-nav .navbar-collapse{flex-basis:auto}.dashboard-nav .navbar-nav{flex-wrap:nowrap;padding:0}}
 @media(max-width:767.98px){.dashboard-title-row{align-items:flex-start}.dashboard-title-row h1{font-size:38px}.season-chip{margin-top:8px}.filter-bar{flex-wrap:wrap;padding:12px 0}.filter-caption{order:4;width:100%}.data-status{margin-left:auto}.filter-divider{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.charts-grid{grid-template-columns:1fr}.goals-panel{grid-column:auto}.chart-panel{padding:17px}.chart-wrap,.goals-panel .chart-wrap{height:205px}.donut-wrap{height:155px}.line-wrap{height:190px}.horizontal-wrap{height:210px}.table-panel{padding:16px 12px 0}.table-hint{max-width:110px;text-align:right;line-height:1.5}.table-footer{flex-direction:column}.standings-table .team-head{min-width:133px}}
 @media(max-width:480px){.dashboard-title-row{display:block}.season-chip{margin-top:18px}.filter-bar .form-select{width:150px}.filter-caption{line-height:1.5}.kpi-card{padding:13px;min-height:116px}.kpi-card>strong{font-size:24px}.kpi-card>strong.kpi-team{font-size:15px}.kpi-head{font-size:6px}.chart-wrap,.goals-panel .chart-wrap{height:190px}.dashboard-footer{letter-spacing:.03em}}
 
@@ -94,7 +94,7 @@ html[data-theme="dark"] .print-button:hover{background:#222c21;border-color:#9bb
 
 @media print{
   @page{size:landscape;margin:12mm}
-  body{background:#fff!important;color:#17231d!important;font-size:10pt}
+  body{padding-top:0;background:#fff!important;color:#17231d!important;font-size:10pt}
   .dashboard-nav,.dashboard-footer,.filter-bar,.export-status,.dashboard-footnote,.table-hint{display:none!important}
   .dashboard-hero{background:#14291f!important;print-color-adjust:exact;-webkit-print-color-adjust:exact;padding-top:12px}
   .dashboard-title-row{padding:12px 0 18px}
